@@ -1,0 +1,33 @@
+{
+  "name": "webpack-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "Mario polo",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "bootstrap": "^4.5.0",
+    "bootstrap-icons": "^1.8.1",
+    "copy-webpack-plugin": "^6.0.2",
+    "css-loader": "^6.7.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

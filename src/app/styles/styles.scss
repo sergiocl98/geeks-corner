@@ -1,0 +1,33 @@
+@import './custom';
+@import './flexGallery';
+@import './header';
+@import './paginator';
+@import './detail';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #040714;
+    color: white;
+}
+
+.main {
+    max-width: 80%;
+    margin: 30px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .buttons {
+        margin: 20px 0;
+    }
+}
+
+.hide {
+    display: none;
+}
