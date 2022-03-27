@@ -1,9 +1,14 @@
-import { displayAnimeList, displayAnimeListByPopularity, displayAnimeListByStatus } from '../views/view-list-anime';
+import { displaySearch,displayAnimeList, displayAnimeListByPopularity, displayAnimeListByStatus } from '../views/view-list-anime';
 
 const onLoadAnimePage = () => {
+    onLoadSearch();
     onLoadAnimeListByPopularity("Popular animes",20);
     onLoadAnimeListByStatus("Top airing animes",20,"airing");
     onLoadAnimeList("Shounen",30,3);
+}
+
+var onLoadSearch = function() {
+  displaySearch();
 }
 
 var onLoadAnimeList = function(title,limit,genre) {
@@ -23,4 +28,4 @@ var onLoadAnimeListByStatus= function(title,limit, status) {
 } */
 
 
-export {onLoadAnimePage, onLoadAnimeList, onLoadAnimeListByPopularity,onLoadAnimeListByStatus };
+export {onLoadSearch, onLoadAnimePage, onLoadAnimeList, onLoadAnimeListByPopularity,onLoadAnimeListByStatus };

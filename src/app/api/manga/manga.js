@@ -112,4 +112,21 @@ const fetchMangaCharacters = async (id) => {
     return data;
 }
 
-export {fetchMangaList,fetchMangaListByPopularity, fetchMangaListByStatus, fetchMangaById,fetchMangaCharacters};
+const fetchMangaSearch = async (value) => {
+
+    //BUILD CALL TO API
+    let url =  URL + "manga?q="+value;
+
+    const response = await fetch(url)
+    .catch((error) => MangaUtil.handleError(error))
+    if(response.status !== 200) {
+        MangaUtil.handleError({message: 'Error'});
+        MangaUtil.toggleLoader();
+        return Promise.reject;
+    }
+    const data = await response.json();
+
+    return data;
+}
+
+export {fetchMangaList,fetchMangaListByPopularity, fetchMangaListByStatus, fetchMangaById,fetchMangaCharacters, fetchMangaSearch};

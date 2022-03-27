@@ -1,9 +1,14 @@
-import { displayMangaList, displayMangaListByPopularity, displayMangaListByStatus } from '../views/view-list-manga';
+import { displayMangaList, displayMangaListByPopularity, displayMangaListByStatus, displaySearch } from '../views/view-list-manga';
 
 const onLoadMangaPage = () => {
+    onLoadSearch()
     onLoadMangaListByPopularity("Popular mangas",20);
     onLoadMangaListByStatus("Top airing mangas",20,"airing");
     onLoadMangaList("Shounen",30,3);
+}
+
+var onLoadSearch = function() {
+  displaySearch();
 }
 
 var onLoadMangaList = function(title,limit,genre) {

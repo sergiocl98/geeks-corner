@@ -132,4 +132,23 @@ const fetchRecentEpisodes = async () => {
     return data;
 }
 
-export {fetchAnimeList,fetchAnimeListByPopularity, fetchAnimeListByStatus, fetchAnimeById,fetchAnimeCharacters, fetchRecentEpisodes};
+const fetchAnimeSearch = async (value) => {
+
+    //BUILD CALL TO API
+    let url =  URL + "anime?q="+value;
+
+    const response = await fetch(url)
+    //.then ( res => res.json())
+    .catch((error) => AnimeUtil.handleError(error))
+    console.log("Objeto respuesta",response)
+    if(response.status !== 200) {
+        AnimeUtil.handleError({message: 'Error'});
+        AnimeUtil.toggleLoader();
+        return Promise.reject;
+    }
+    const data = await response.json();
+    console.log("retorno respuesta",data)
+    return data;
+}
+
+export {fetchAnimeList,fetchAnimeListByPopularity, fetchAnimeListByStatus, fetchAnimeById,fetchAnimeCharacters, fetchRecentEpisodes, fetchAnimeSearch};
