@@ -1,0 +1,41 @@
+.home-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #4158d0;
+        background-image: linear-gradient(
+            43deg,
+            #4158d0 0%,
+            #c850c0 30%,
+            #ffcc70 66%,
+            #ffffff 100%
+        );
+
+        width: 400px;
+        height: 350px;
+        border: 3px solid orange;
+        border-radius: 15px;
+        box-shadow: rgba(253, 183, 116, 0.19) 0px 10px 20px,
+            rgba(253, 183, 116, 0.19) 0px 6px 6px;
+
+        &:hover {
+            cursor: pointer;
+            border: 5px solid white;
+            background-color: #fa8bff;
+            background-image: linear-gradient(
+                45deg,
+                #fa8bff 0%,
+                #2bd2ff 52%,
+                #2bff88 90%
+            );
+        }
+    }
+}

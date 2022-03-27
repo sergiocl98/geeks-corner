@@ -67,8 +67,13 @@
             transform: scale(1.05);
             transition-duration: 1s;
         }
+
+        &__episode-info {
+            display: flex;
+            flex-direction: column;
+        }
     }
-    & div {
+    & .flex-item-image {
         width: 150px;
         height: 200px;
         border: solid white 3px;

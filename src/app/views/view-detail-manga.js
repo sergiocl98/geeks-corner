@@ -1,8 +1,8 @@
-import { fetchAnimeCharacters } from "../api/anime/anime";
-import { displayCharactersByAnime } from "./view-character";
+import { fetchMangaCharacters } from "../api/manga/manga";
+import { displayCharactersByManga } from "./view-character";
 
 
-const displayDetail = (data,id) =>{
+const displayDetailManga = (data,id) =>{
 
     console.log("DIsplay", data)
     const detailSection= document.getElementById("detail");
@@ -29,25 +29,18 @@ const displayDetail = (data,id) =>{
     pGenres.setAttribute("class", "detail-view__genres")
     div.appendChild(pGenres);
 
-    //EPISODES
-    let episodes = document.createElement("p");
-    let numEpisodes = data.episodes !== null ? data.episodes : 0;
-    episodes.innerText= "Episodes: " + numEpisodes;
-    episodes.setAttribute("class", "detail-view__episodes")
-    div.appendChild(episodes);
+    //VOLUMES
+    let volumes = document.createElement("p");
+    let numEpisodes = data.volumes !== null ? data.volumes : "Unknown";
+    volumes.innerText= "Episodes: " + numEpisodes;
+    volumes.setAttribute("class", "detail-view__volumes")
+    div.appendChild(volumes);
 
-    //DURATION
-    let duration = document.createElement("p");
-    let mins = data.duration !== null ? data.duration : 0;
-    duration.innerText= "Duration: " + mins;
-    duration.setAttribute("class", "detail-view__duration")
-    div.appendChild(duration);
-
-    //RATING
-    let rating = document.createElement("p");
-    rating.innerText= "Rating: " + data.rating;
-    rating.setAttribute("class", "detail-view__rating")
-    div.appendChild(rating);
+    //RANK
+    let rank = document.createElement("p");
+    rank.innerText= "Rank: " + data.rank;
+    rank.setAttribute("class", "detail-view__rank")
+    div.appendChild(rank);
 
     //SCORE
     let score = document.createElement("p");
@@ -87,19 +80,10 @@ const displayDetail = (data,id) =>{
     divImage.appendChild(image)
     
 
-    // TRAILER
-    let divIframe = document.createElement("div");
-    if(data.trailer.embed_url){
-        divIframe.setAttribute("class","detail-trailer ratio ratio-16x9")
-        divIframe.innerHTML= `<iframe src="${data.trailer.embed_url}&mute=1&loop=1&playlist=${data.trailer.youtube_id}" allowFullScreen />`;
-    }
-    divIframe.setAttribute("class", "detail-view__trailer")
-    div.appendChild(divIframe);
-
     //GET CHARACTERS
     const handleToggleCharacters = () => {
-        const detailCharacters = fetchAnimeCharacters(id);
-        detailCharacters.then((data)=> displayCharactersByAnime(data.data))
+        const detailCharacters = fetchMangaCharacters(id);
+        detailCharacters.then((data)=> displayCharactersByManga(data.data))
 
         let button = document.getElementById("toggle-characters");
         button.setAttribute("disabled",true);
@@ -127,4 +111,4 @@ const displayDetail = (data,id) =>{
     detailSection.appendChild(charactersSection);
 }
 
-export {displayDetail}
+export {displayDetailManga}

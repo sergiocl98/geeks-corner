@@ -1,4 +1,5 @@
 import {AnimeUtil} from "../../utils/AnimeUtil"
+import {EpisodeUtil} from "../../utils/EpisodeUtil"
 
 const URL = "https://api.jikan.moe/v4/"
 
@@ -112,4 +113,23 @@ const fetchAnimeCharacters = async (id) => {
     return data;
 }
 
-export {fetchAnimeList,fetchAnimeListByPopularity, fetchAnimeListByStatus, fetchAnimeById,fetchAnimeCharacters};
+const fetchRecentEpisodes = async () => {
+
+    //BUILD CALL TO API
+    let url =  URL + "watch/episodes" ;
+
+    console.log(url)
+    const response = await fetch(url)
+    //.then ( res => res.json())
+    .catch((error) => EpisodeUtil.handleError(error))
+
+    if(response.status !== 200) {
+        EpisodeUtil.handleError({message: 'Error'});
+        EpisodeUtil.toggleLoader();
+        return Promise.reject;
+    }
+    const data = await response.json();
+    return data;
+}
+
+export {fetchAnimeList,fetchAnimeListByPopularity, fetchAnimeListByStatus, fetchAnimeById,fetchAnimeCharacters, fetchRecentEpisodes};
