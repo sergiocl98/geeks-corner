@@ -24,14 +24,10 @@ const displaySearch = () => {
 
   const handleOnClickSearch = () => {
     const valueToSearch = document.getElementById("input-search").value
-    console.log(valueToSearch)
-    displayAnimeListSearch(valueToSearch+"...", valueToSearch)
+    if(valueToSearch!== ""){
+      displayAnimeListSearch(valueToSearch+"...", valueToSearch)
+    }
   }
-
-  /* const handleOnSubmitSearch = () => {
-    const valueToSearch = document.getElementById("input-search").value
-    console.log(valueToSearch)
-  } */
 
   const button = document.getElementById('button-search')
   button.addEventListener("click",handleOnClickSearch)

@@ -16,8 +16,9 @@ const displaySearch = () => {
 
   const handleOnClickSearch = () => {
     const valueToSearch = document.getElementById("input-search").value
-    console.log(valueToSearch)
-    displayMangaListSearch(valueToSearch+"...", valueToSearch)
+    if(valueToSearch!== ""){
+      displayMangaListSearch(valueToSearch+"...", valueToSearch)
+    }
   }
 
   /* const handleOnSubmitSearch = () => {
