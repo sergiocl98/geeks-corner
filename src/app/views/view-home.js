@@ -70,6 +70,11 @@ const displayRecentEpisodes = (title) => {
   const main = document.getElementById('main');
   const section = document.createElement("section");
   section.setAttribute("class", "flex-gallery");
+    // Scroll X while wheel
+  section.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    section.scrollLeft += evt.deltaY;
+});
   const sectionTitle = document.createElement("h2");
   sectionTitle.setAttribute("class", "section-title");
   sectionTitle.innerText=title;

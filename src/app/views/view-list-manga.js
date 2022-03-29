@@ -42,6 +42,10 @@ document.querySelectorAll(".section-title").forEach(div => div.remove())
 
 const section = document.createElement("section");
 section.setAttribute("class", "flex-gallery");
+section.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  section.scrollLeft += evt.deltaY;
+});
 const sectionTitle = document.createElement("h2");
 sectionTitle.setAttribute("class", "section-title");
 sectionTitle.innerText=title;
@@ -95,6 +99,10 @@ const displayMangaList = (title, offset = 20,  genre) => {
   const main = document.getElementById('main');
   const section = document.createElement("section");
   section.setAttribute("class", "flex-gallery");
+  section.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    section.scrollLeft += evt.deltaY;
+  });
   const sectionTitle = document.createElement("h2");
   sectionTitle.setAttribute("class", "section-title");
   sectionTitle.innerText=title;
@@ -141,6 +149,10 @@ const displayMangaListByPopularity = (title, offset = 20,  genre) => {
   const main = document.getElementById('main');
   const section = document.createElement("section");
   section.setAttribute("class", "flex-gallery");
+  section.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    section.scrollLeft += evt.deltaY;
+  });
   const sectionTitle = document.createElement("h2");
   sectionTitle.setAttribute("class", "section-title");
   sectionTitle.innerText=title;
@@ -189,6 +201,10 @@ const displayMangaListByStatus = (title, offset = 20,  status) => {
   const main = document.getElementById('main');
   const section = document.createElement("section");
   section.setAttribute("class", "flex-gallery");
+  section.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    section.scrollLeft += evt.deltaY;
+  });
   const sectionTitle = document.createElement("h2");
   sectionTitle.setAttribute("class", "section-title");
   sectionTitle.innerText=title;
