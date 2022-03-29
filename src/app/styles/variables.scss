@@ -1,0 +1,17 @@
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1280px;
+
+// SCSS Mixins
+@mixin tablet {
+    @media only screen and (min-width: #{$layout_bp_tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: #{$layout_bp_desktop}) {
+        @content;
+    }
+}

@@ -1,9 +1,16 @@
+@import './variables';
+
 .detail {
     &-main {
         display: flex;
+        flex-direction: column-reverse;
         justify-content: space-around;
         //align-items: center;
         margin: 40px;
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-around;
+        }
     }
 
     & .detail-view {
@@ -26,10 +33,19 @@
     & .detail-view-multimedia {
         margin: 10px;
 
+        &__image-container {
+            min-width: 40%;
+            @include tablet {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
         &__image {
             border-radius: 8px;
             box-shadow: rgba(255, 255, 255, 0.19) 0px 10px 20px,
                 rgba(255, 255, 255, 0.23) 0px 6px 6px;
+            max-width: 100%;
         }
     }
 

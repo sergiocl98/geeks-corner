@@ -8,7 +8,7 @@ class MangaUtil {
         `<div class="flex-item">
             <p class="flex-item-error">Error: Hubo un problema con la petición Fetch: ${error.message}</p>
           </div>`;
-        //document.getElementById('main').innerHTML = mangaHTMLString;
+        document.getElementById('main').innerHTML = mangaHTMLString;
     }
 }
 
