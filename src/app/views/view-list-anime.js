@@ -22,7 +22,8 @@ const displaySearch = () => {
 
   main.appendChild(div)
 
-  const handleOnClickSearch = () => {
+  const handleOnClickSearch = (e) => {
+    e.preventDefault()
     const valueToSearch = document.getElementById("input-search").value
     if(valueToSearch!== ""){
       displayAnimeListSearch(valueToSearch+"...", valueToSearch)
@@ -30,7 +31,7 @@ const displaySearch = () => {
   }
 
   const button = document.getElementById('button-search')
-  button.addEventListener("click",handleOnClickSearch)
+  button.addEventListener("click",(e) => handleOnClickSearch(e))
   /* const input = document.getElementById("input-search");
   input.addEventListener("submit",handleOnSubmitSearch) */
 
