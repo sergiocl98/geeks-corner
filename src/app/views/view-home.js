@@ -74,7 +74,7 @@ const displayRecentEpisodes = (title) => {
   section.addEventListener("wheel", (evt) => {
     evt.preventDefault();
     section.scrollLeft += evt.deltaY;
-});
+  });
   const sectionTitle = document.createElement("h2");
   sectionTitle.setAttribute("class", "section-title");
   sectionTitle.innerText=title;
